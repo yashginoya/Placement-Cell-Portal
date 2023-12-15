@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.home,a{
+    box-sizing:border-box;
+    color:white;
+}
+.home{
+    font-size: 30px;
+    padding-left:20px;
+}
+.tag{
+    display:flex;
+    padding-right: 30px ;
+    margin: 10px;
+}
+a{
+    font-size: 20px;
+    text-decoration: none;
+}
+a:hover{
+   color:#88a4f8;
+   text-shadow: 1px 1px 8px rgb(164, 164, 164);
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    background-color: black;
+    font-style: Montserrat, serif;
+    font-size: medium;
+    align-items: baseline;
+    padding:10px 20px;
+    margin:0px;
+}
+.nav_links{
+    display:flex;
+}
+li{
+    margin:10px;
+  }
+.contact{
+    background-color: rgba(3, 31, 144, 0.104);
+    padding:10px;
+    margin-top:20px;
+    padding-left:50px;
+}
+footer{
+    background-color: rgba(3, 31, 144, 0.19);
+    border:2px solid white;
+    margin:20px 0px 20px 0px;
+    padding:20px;
+    text-align: center;
+    font-size: 20px;
+}
+p{
+    padding:5px;
+    font-size: 20px;
+}
+.spc{
+    background-image: url("../images/spc.jpg");
+    background-position: center;
+    background-size:cover;
+    width:100%;
+    height:600px;
+}
+.btn{
+    display:flex;
+    justify-content: center;
+    padding:10px;
+    margin:10px;
+}
+button{
+    width:300px;
+    height:100px;
+    border-radius: 25px;
+    font-size: 20px;
+    background-color: rgb(193, 222, 248);
+    border:1px solid rgb(255, 255, 255);
+}
+button:hover{
+    background-color: rgb(105, 182, 250) ;
+    border: 8px solid aliceblue;
+}
+
+.container{
+    margin: 10px;
+    padding: 10px;
+}
+
+.container p{
+    text-align: justify;
+  text-justify: inter-word;
+}

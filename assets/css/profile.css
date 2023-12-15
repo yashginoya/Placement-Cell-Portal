@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f8ff;
+    /* background-color: antiquewhite; */
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.box {
+
+    background-color: #fff;
+    width: 80%;
+    border-radius: 0.375em;
+    box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+    color: #4a4a4a;
+    display: grid;
+    padding: 1.25rem;
+  
+    margin: 1em 8em;
+}
+#content{
+    display: grid;
+    }
+
+
+#navbar {
+    /* margin: auto; */
+    /* width: 50%; */
+    border: 3px solid green;
+    padding: 10px;
+    text-align: end;
+}
+
+.userimage {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#photo {
+    width: 180px;
+    height: 150px;
+    padding: 10px;
+}
+
+
+.accordion{
+    justify-content: center;
+}
+
+.btn1{
+    margin: 1em auto;
+    margin-left: 11em;
+    justify-content: center;
+
+}
+
+.button1{
+    width: 9em;
+    background-color: #ff0000;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button3{
+    width: 9em;
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button2{
+    width: 9em;
+    background-color: green;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.button1:hover {
+    color: #000000;
+    background-color: #ff3131;
+   border: none;
+
+}
+.button2:hover {
+    color: #000000;
+    background-color: rgb(33, 163, 33);
+   border: none;
+
+}
+.button3:hover {
+    color: #000000;
+    background-color: #44BBA4;
+    border: none;
+
+}
+
+.accordion{
+    background-color: #fefffa;
+  border-top: 6px solid #44BBA4;
+  line-height: 1.6;
+  box-shadow: 5px 5px 10px 0px #a4bac1;
+}
+
+.header {
+    font-size: 1.4em;
+}
+
+.accordion-item{
+   font-size: 0.95em;  /* table font size */
+    border-bottom: 1px solid #1d91bc;
+}
+
+.accordion-button{
+    height: 2.5em;
+    color: black;
+    appearance: none;
+}
+
+
+
+
+.table1 {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin: auto;
+    width: 80%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(10, 10, 10, .02);
+    
+}
+
+
+
+
+.table1 td{
+    padding: auto;
+    text-align: center;
+   
+}
+
+
+.table1 tbody tr{
+    border-bottom: 0.05em solid;
+    
+}
+
+.table1 tbody td:nth-child(1){
+   font-weight: bold;
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+   background-color:#f3f3f3 ;
+   
+}
+
+.table1 tbody td:nth-child(2){
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+ }
+
+.table1 tbody tr{
+    font-size: 0.8em;
+}
+
+
+.table1 tbody tr:last-of-type{
+    border-bottom: 0.1em solid #2f353a;
+}
+/* .table>tbody>tr>td {
+    font-size: 18px;
+}
+
+.table>tbody>tr>td>span {
+    margin-right: 15px;
+} */
+
+
+.unplaced,
+.placed {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.placed {
+    background-color: #f44336;
+}
+
+.unplaced:hover {
+    color: #4CAF50;
+    background-color: white;
+    border: 3px solid #4CAF50;
+
+
+}
+
+.placed:hover {
+    color: #f44336;
+    background-color: white;
+    border: 3px solid #f44336;
+}

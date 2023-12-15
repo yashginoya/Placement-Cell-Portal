@@ -1,0 +1,162 @@
+body {
+    Background-color: #f0f8ff;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.p-4 {
+    display: inline-block;
+}
+
+.form-group2 {
+    font-size: 1.2em;
+}
+
+.box {
+
+    background-color: #fff;
+    width: 42em;
+    border-radius: 0.375em;
+    box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+    color: #4a4a4a;
+    display: inline-block;
+    padding: 1.25rem;
+    margin-left: 15em;
+    margin-top: 1em;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    margin-block-end: 1em;
+}
+
+.title {
+    font-size: 5em;
+    margin: 0em 0em;
+}
+
+.title1 {
+    color: black;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+
+.label-1 {
+    font-size: 20px;
+}
+
+.form-group {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.form-group [type="text"] ,
+.form-group [type="tel"], 
+.form-group [type="url"] {
+    height: 2.2em;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 0%;
+}
+
+.form-group [type="text"]:hover {
+    box-shadow: 0 0 3px 1px #8eb0f9;
+    outline: none;
+
+}
+
+.form-group [type="number"] {
+    height: 2.2em;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 0%;
+
+}
+
+.form-group [type="email"]:hover {
+    box-shadow: 0 0 3px 1px #8eb0f9;
+    outline: none;
+
+}
+
+.form-group [type="email"] {
+    height: 2.2em;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 0%;
+
+}
+
+.form-group [type="number"]:hover {
+    box-shadow: 0 0 3px 1px #8eb0f9;
+    outline: none;
+
+}
+
+
+.form-group [type="password"] {
+    height: 2.2em;
+    width: 100%;
+    font-size: 15px;
+
+}
+
+.form-group [type="password"]:hover {
+    box-shadow: 0 0 3px 1px #8eb0f9;
+    outline: none;
+
+}
+
+
+#browser {
+    width: 100%
+}
+
+.strong {
+    background-color: #212121;
+    color: #ffffffc5;
+    font-size: 1.5em;
+    width: 6em;
+    height: 2em;
+    border-radius: 5px;
+    margin-top: 0.75em;
+    margin-left: 9em;
+}
+
+.btns {
+    margin-top: 1em;
+}
+
+.strong:hover {
+
+    background-color: #1779fa;
+    color: #fff;
+    border: none;
+    box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+}
+
+.box {
+    display: block;
+    margin: auto;
+}
+
+.dob {
+    height: 2.2em;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 0%;
+}
+
+.gender {
+    height: 2.2em;
+    width: 100%;
+    font-size: 15px;
+    margin: 25px 0px;
+}
+
+span {
+    /* background-color: rebeccapurple; */
+    margin: 5px;
+    font-size: 15px;
+}

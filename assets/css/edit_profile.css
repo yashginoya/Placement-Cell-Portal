@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: lightcyan; */
+    background-color: antiquewhite;
+    background: linear-gradient(to right, #267871, #136a8a);
+}
+
+#Profile {
+    /* margin: 15px; */
+    margin: auto;
+    margin-top: 50px;
+    width: 60%;
+    /* background-color: antiquewhite; */
+    /* background-color: lightcyan; */
+    background-color: white;
+    display: inline-block;
+    /* box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 10px rgba(10, 10, 10, .02); */
+    box-shadow: 0 .5em 1em -.125em black, 0 0 0 10px rgba(10, 10, 10, .02);
+}
+
+#navbar {
+    /* margin: auto; */
+    /* width: 50%; */
+    border: 3px solid green;
+    padding: 10px;
+    text-align: end;
+}
+
+.userimage {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#photo {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+.table>tbody>tr>td {
+    font-size: 15px;
+    padding: 8px;
+}
+
+input {
+    border: 0px;
+    padding: 5px;
+    width: auto;
+}
+
+.submit {
+    display: block;
+    margin: auto;
+    padding: 5px;
+    /* width: 100px; */
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    /* background-color: lightcyan; */
+}
+
+input[type="submit"] {
+
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    /* width: 100px; */
+    width: auto;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    /* background-color: lightcyan; */
+}
+
+/* .table-hover tbody tr:hover td {
+    background: rgb(196, 225, 255);
+} */

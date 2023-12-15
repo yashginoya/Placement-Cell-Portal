@@ -1,0 +1,56 @@
+body{
+    overflow-x: hidden;
+}
+.mb-4{
+    text-align: center;
+    font-size: 40px;
+    font-style: serif;
+    font-weight: 500;
+    color:blueviolet
+}
+.main{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: space-arond;
+}
+.chart{
+    width:100%;
+    max-width:500px; 
+    height:600px;
+    padding:0px;
+
+}
+.box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:400px;
+    height:300px;
+    padding:20px;
+    font-size: 30px;
+    text-align: center;
+    font-style: serif;
+    color:white;
+    border-radius:25px;
+}
+.box1{
+    background-color: rgba(29, 177, 218, 0.741);
+    border:2px solid rgb(157, 208, 244);
+}
+.box2{
+    background-color: rgba(29, 177, 218, 0.741);
+    border:2px solid rgb(157, 208, 244);
+}
+.cover{
+    height:500px;
+    margin:10px;
+    border:1px solid black;
+    background-image: url(../images/admincover.png);
+    background-position: center;
+    background-size: cover;
+}
+.headline{
+    margin:20px;
+    font-size: 30px;
+}

@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f8ff;
+    /* background-color: antiquewhite; */
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#content {
+    /* margin: 15px; */
+    margin: auto;
+    margin-top: 4.5em;
+    border-radius: 0.375em;
+    width: 60%;
+    /* background-color: antiquewhite; */
+    /* background-color: lightcyan; */
+    background-color: white;
+    display: inline-block;
+    box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+}
+
+#navbar {
+    /* margin: auto; */
+    /* width: 50%; */
+    border: 3px solid green;
+    padding: 10px;
+    text-align: end;
+}
+
+.userimage {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#photo {
+    width: 180px;
+    height: 150px;
+    padding: 10px;
+}
+
+.table>tbody>tr>td {
+    font-size: 18px;
+}
+
+.table>tbody>tr>td>span {
+    margin-right: 15px;
+}
+
+.hire {
+    width: 100px;
+    background: rgb(10, 177, 10);
+    border: none;
+    color: white;
+    border-radius: 5px solid;
+}

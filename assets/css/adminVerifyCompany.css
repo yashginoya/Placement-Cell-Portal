@@ -1,0 +1,77 @@
+table {
+    border: 2px solid #badafa;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+}
+
+th,
+td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #08335c;
+    margin: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+th {
+    background-color: #badafa;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0px;
+}
+
+tr:hover {
+    background-color: #dfedff;
+}
+
+/* Style the profile and verify buttons */
+.accept,
+.reject {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Style the accept and reject buttons */
+
+.accept {
+    border: 3px solid #4CAF50;
+    background-color: #4CAF50;
+}
+
+.reject {
+    border: 3px solid #f44336;
+    background-color: #f44336;
+}
+
+
+.accept:hover {
+    color: #4CAF50;
+    background-color: white;
+    border: 3px solid #4CAF50;
+
+
+}
+
+.reject:hover {
+    color: #f44336;
+    background-color: white;
+    border: 3px solid #f44336;
+}

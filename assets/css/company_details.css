@@ -1,0 +1,56 @@
+/* .table-hover tbody tr:hover td {
+    background: rgb(196, 225, 255);
+} */
+
+.dark {
+    color: #fff;
+    background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1));
+}
+
+body {
+    /* background-color: lightcyan; */
+    background-color: antiquewhite;
+    background: linear-gradient(to right, #267871, #136a8a);
+}
+
+#Company {
+
+    min-height: 100vh;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+
+    /* margin: 15px; */
+    margin: auto;
+    margin-top: 50px;
+    width: 60%;
+    /* background-color: antiquewhite; */
+    /* background-color: lightcyan; */
+    background-color: white;
+    display: inline-block;
+    /* box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 10px rgba(10, 10, 10, .02); */
+    box-shadow: 0 .5em 1em -.125em black, 0 0 0 10px rgba(10, 10, 10, .02);
+}
+
+.table>tbody>tr>td {
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 
+.filter {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+} */
+
+select {
+    border-radius: 8px;
+    padding: 2px;
+    margin: 2px;
+}
