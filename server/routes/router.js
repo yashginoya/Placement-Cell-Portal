@@ -72,7 +72,7 @@ route.get('/delete', authorization, controller.deleteUser);
   * @description mail for specific job to students
   * @method GET /
   */
-route.get('/mail/:id', authorizationAdmin, controller.sendMail);
+// route.get('/mail/:id', authorizationAdmin, controller.sendMail);
 
 /**
   * @description Verify Routes (serving pages)
