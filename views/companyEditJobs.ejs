@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title> Edit Job </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/companyEditJobs.css">
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+      </div>
+      <div class="img bg-wrap text-center py-4">
+        <div class="user-logo">
+          <div class="img" style="background-image: url(/images/company.png);"></div>
+          <h3> <%= job.jobName %> </h3>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li>
+          <a href="/profile"><span class="fa-solid fa-user mr-3"></span> Profile</a>
+        </li>
+        <li class="active">
+          <a href="/postJob"><span class="fa-solid fa-plus mr-3"></span> Add Job</a>
+        </li>
+        <li>
+          <a href="/updatePassword"><span class="fa fa-cloud-upload mr-3"></span> Update
+              Password</a>
+        </li >
+        <li>
+          <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <div class="box">
+
+
+        <form action="/updateJobPost/<%= job._id %>" method="POST">
+
+          <div class="title1">
+
+            <a> Edit Job : </a>
+
+          </div>
+          <% if(message) { %>
+            <h3 style="color: red"> <%= message %> </h3>
+              <% } %>
+          <label for="jobName" class="label-1"> Job Name </label>
+
+          <div class="form-group">
+            <input type="text" name="jobName" id="browser" autocomplete="off" value="<%= job.jobName %>" required>
+
+          </div>
+
+          <label for="postingLocation" class="label-1"> Posting Location</label>
+
+          <div class="form-group">
+            <input type="text" name="postingLocation" id="browser" autocomplete="off" value="<%= job.postingLocation %>" required>
+
+          </div>
+          <label for="cpiCriteria" class="label-1"> Minimum Needed CPI </label>
+
+          <div class="form-group">
+            <input type="number" min="0" max="10" step="0.01" name="cpiCriteria" id="browser" autocomplete="off" value="<%= job.cpiCriteria %>" required>
+
+          </div>
+
+
+          <label for="ctc" class="label-1"> CTC (LPA)</label>
+
+          <div class="form-group">
+            <input type="number" name="ctc" min="0" step="0.01" id="browser" autocomplete="off" value="<%= job.ctc %>" required>
+
+
+          </div>
+
+          <label for="openfor" class="label-1"> Open For </label>
+
+          <div class="form-group">
+            <% let flag1 = false; %>
+            <% for(let i=0; i < job.ugCriteria.length; i++){ %>
+              <% if(job.ugCriteria[i] === "B.Tech") flag1 = true;%>
+              <% } %>
+            <input type="checkbox" <% if(flag1) {%> 
+              checked
+              <% } %>
+              name="btech" id="btech" value="B.Tech">
+            <label for="btech">  B.Tech</label><br>
+
+            <% let flag2 = false; %>
+            <% for(let i=0; i < job.ugCriteria.length; i++){ %>
+              <% if(job.ugCriteria[i] === "M.Tech") flag2 = true;%>
+              <% } %>
+            <input type="checkbox" <% if(flag2) {%> 
+              checked
+              <% } %> name="mtech" id="mtech" value="M.Tech">
+            <label for="mtech"> M.Tech</label><br>
+
+            <% let flag3 = false; %>
+            <% for(let i=0; i < job.ugCriteria.length; i++){ %>
+              <% if(job.ugCriteria[i] === "MSc") flag3 = true;%>
+              <% } %>
+            <input type="checkbox" <% if(flag3) {%> 
+              checked
+              <% } %> name="msc" id="msc" value="MSc">
+            <label for="msc">  MSc </label><br>
+          </div>
+
+          <label for="description" class="label-1"> Description </label>
+
+          <div class="form-group">
+            <input type="text" name="description" id="browser" autocomplete="off" value="<%= job.description %>" required>
+
+
+          </div>
+
+          
+          <div class="btns">
+            <button type="submit" class="strong"> Update </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

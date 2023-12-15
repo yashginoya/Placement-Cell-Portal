@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Job Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+    integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/studentProfile.css">
+
+</head>
+
+<body>
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+      </div>
+      <div class="img bg-wrap text-center py-4">
+        <div class="user-logo">
+          <div class="img" style="background-image: url(/images/logo.jpg);"></div>
+          <h3><%= user.firstName %> <%= user.lastName %></h3>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li>
+          <a href="/profile"><span class="fa fa-user mr-3"></span> Profile</a>
+        </li>
+        <% if(user.isRejected == false) {%>
+          <li>
+            <a href="/updatePassword"><span class="fa fa-cloud-upload mr-3 "></span> Update Password</a>
+          </li>
+          <li>
+            <a href="/updateResume"><span class="fa fa-cloud-upload mr-3"></span> Update
+              Resume</a>
+          </li>
+          <% if(user.isVerified == false) {%>
+          <li>
+            <a href="/update"><span class="fa fa-pencil-square-o mr-3"></span>Edit Profile</a>
+          </li>
+          <% }%>
+          <% if(user.isVerified == true) {%>
+            <li class="active">
+              <a href="/viewCompany"><span class="fa fa-list mr-3 "></span> Companies</a>
+            </li>
+          <%}%>
+        <%}%>
+        <li>
+          <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+        </li>
+      </ul>
+
+    </nav>
+
+
+    <div id="Profile" class="p-4 p-md-5 pt-5">
+      <div class="userimage">
+        <h2 class="mb-4"> Job Details, <%= job.companyName %> </h2>
+      </div>
+      <table class="table">
+        <tr>
+            <td>Company Name </td>
+            <td>:</td>
+            <td> <%= job.companyName %> </td>
+          </tr>
+        <tr>
+          <td>Job Name </td>
+          <td>:</td>
+          <td> <%= job.jobName %> </td>
+        </tr>
+        <tr>
+          <td>Posting Location</td>
+          <td>:</td>
+          <td><%= job.postingLocation %> </td>
+        </tr>
+        <tr>
+          <td>Open For </td>
+          <td>:</td>
+          <td><%= job.ugCriteria %> </td>
+        </tr>
+        <tr>
+          <td>CPI Required</td>
+          <td>:</td>
+          <td><%= job.cpiCriteria %></td>
+        </tr>
+        <tr>
+          <td>CTC</td>
+          <td>:</td>
+          <td><%= job.ctc %> LPA</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>:</td>
+          <td><%= job.description %></td>
+        </tr>
+        <tr>
+          <td>Registration Start Date</td>
+          <td>:</td>
+          <td><%= job.startDate %></td>
+        </tr>
+        <tr>
+          <td>Registration End Date</td>
+          <td>:</td>
+          <td><%= job.endDate %></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

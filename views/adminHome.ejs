@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Admin Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="/css/adminhome.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+      </div>
+      <div class="img bg-wrap text-center py-4">
+        <div class="user-logo">
+          <div class="img" style="background-image: url(/images/admin.png);"></div>
+          <% if(isSuperAdmin) {%>
+            <h3>Placement Manager</h3>
+        <% } else {%>
+            <h3>Admin</h3>
+        <% }%>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        
+        <li class="active">
+          <a href="/profile"><i class="fa fa-line-chart mr-3" aria-hidden="true"></i> Admin Statistics</a>
+        </li>
+        <li>
+          <a href="/updatePassword"><i class="fa fa-cloud-upload mr-3 " aria-hidden="true"></i> Update Password</a>
+        </li>
+        <li>
+          <a href="/unverifiedstudents"><i class="fa fa-check mr-3" aria-hidden="true"></i> Verify Students</a>
+        </li>
+        <li>
+          <a href="/adminInterviewSchedule"><i class="fa fa-pencil-square-o mr-3" aria-hidden="true"></i> Schedule Jobs</a>
+        </li>
+        <li>
+          <a href="/unverifiedjobs"><i class="fa fa-briefcase mr-3" aria-hidden="true"></i> Verify Jobs</a>
+        </li>
+        <% if(isSuperAdmin==true) {%>
+          <li>
+            <a href="/unverifiedcompany"><i class="fa fa-building-o mr-3" aria-hidden="true"></i> Verify Company</a>
+          </li>
+          <% } %>
+            <li>
+              <a href="/adminStudents"><span class="fa-solid fa-list mr-3"></span> Student list</a>
+            </li>
+            <li>
+              <a href="/adminJobs"><span class="fa-solid fa-list mr-3"></span> Job list</a>
+            </li>
+
+            <li>
+              <a href="/adminCompany"><span class="fa-solid fa-list mr-3"></span> Company list</a>
+            </li>
+
+            <li>
+              <a href="/datasheet"><span class="fa fa-solid fa-download mr-3"></span> Datasheet</a>
+            </li>
+            <li>
+              <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+            </li>
+      </ul>
+    </nav>
+
+    <div style="display: none;" id="placed">
+      <%= placed %>
+    </div>
+    <div style="display: none;" id="male">
+      <%= a1 %>
+    </div>
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <h2 style="text-align: center;" class="headline">Placement Statistics</h2>
+      <div style="border: 2px solid black;" class="main">
+        <div id="myChart" class="chart"></div>
+        <div id="myChart1" class="chart" style="z-index: -1;"></div>
+      </div>
+      <!-- <div class="main">
+        <div class="box box1">Highest Package Offered : 50 LPA</div>
+        <div class="box box2">Average Placement Package : 20 LPA</div>
+      </div> -->
+    </div>
+  </div>
+
+  <script src="/js/adminhome.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

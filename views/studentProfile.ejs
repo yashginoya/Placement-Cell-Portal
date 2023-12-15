@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Student Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+    integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/studentProfile.css">
+
+</head>
+
+<body>
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+      </div>
+      <div class="img bg-wrap text-center py-4" >
+        <div class="user-logo">
+          <div class="img" style="background-image: url(/images/logo.jpg);"></div>
+          <h3><%= student.student.firstName %> <%= student.student.lastName %></h3>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a href="/profile"><span class="fa fa-user mr-3"></span> Profile</a>
+        </li>
+        <% if(student.student.isRejected == false) {%>
+          <li>
+            <a href="/updatePassword"><span class="fa fa-cloud-upload mr-3 "></span> Update Password</a>
+          </li>
+          <li>
+            <a href="/updateResume"><span class="fa fa-cloud-upload mr-3"></span> Update
+              Resume</a>
+          </li>
+          <% if(student.student.isVerified == false) {%>
+          <li>
+            <a href="/update"><span class="fa fa-pencil-square-o mr-3"></span>Edit Profile</a>
+          </li>
+          <% }%>
+          <% if(student.student.isVerified == true) {%>
+            <li>
+              <a href="/viewCompany"><span class="fa fa-list mr-3 "></span> Companies</a>
+            </li>
+          <%}%>
+        <%}%>
+        <li>
+          <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+        </li>
+      </ul>
+
+    </nav>
+
+
+    <div id="Profile" class="p-4 p-md-5 pt-5">
+
+      <div class="userimage">
+        <h2 class="mb-4">Welcome, <%= student.student.firstName %> <%= student.student.lastName %> </h2>
+      </div>
+      <% if(student.student.isRejected) {%>
+      <h5 style="text-align:center; color: red;">Your are rejected by the admin </h5>
+      <%} else { %>
+        <% if (student.student.isVerified) { %>
+          <% if (student.student.isPlaced) { %>
+            <h5 style="text-align:center; color: green;"> Hurrah 🥳! You are placed at <%= student.job.companyName %> as <%= student.job.jobName %>. </h5>
+          <% } else { %>
+            <h5 style="text-align:center; color: green;">Your profile is verified </h5>
+          <% } %>
+
+
+          <% }else {%>
+            <h5 style="text-align:center; color: red;">Your profile is not verified </h5>
+          <% } %>
+        <% } %>
+      <table class="table">
+        <tr>
+          <td>Email Address </td>
+          <td>:</td>
+          <td> <%= student.student.email %> </td>
+        </tr>
+        <tr>
+          <td>First Name </td>
+          <td>:</td>
+          <td> <%= student.student.firstName %> </td>
+        </tr>
+        <tr>
+          <td>Middle Name</td>
+          <td>:</td>
+          <td><%= student.student.middleName %> </td>
+        </tr>
+        <tr>
+          <td>Last Name </td>
+          <td>:</td>
+          <td><%= student.student.lastName %> </td>
+        </tr>
+        <tr>
+          <td>Date Of Birth</td>
+          <td>:</td>
+          
+          <td><%= new Date(student.student.dob).toDateString() %></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>:</td>
+          <td><%= student.student.gender %></td>
+        </tr>
+        <tr>
+          <td>Mobile Nnumber</td>
+          <td>:</td>
+          <td><%= student.student.mobileNumber %></td>
+        </tr>
+        <tr>
+          <td>Alternative Mobile Nnumber</td>
+          <td>:</td>
+          <td><%= student.student.alternateMobileNumber %></td>
+        </tr>
+        <tr>
+          <td>10th Percentage</td>
+          <td>:</td>
+          <td><%= student.student.tenthPercentage %>%</td>
+        </tr>
+        <tr>
+          <td>12th Percentage</td>
+          <td>:</td>
+          <td><%= student.student.twelfthPercentage %>%</td>
+        </tr>
+        <tr>
+          <td>CPI</td>
+          <td>:</td>
+          <td><%= student.student.cpi %></td>
+        </tr>
+        <tr>
+          <td>Active Backlogs</td>
+          <td>:</td>
+          <td><%= student.student.activeBacklog %></td>
+        </tr>
+        <tr>
+          <td>Total Backlogs</td>
+          <td>:</td>
+          <td><%= student.student.totalBacklog %></td>
+        </tr>
+        <tr>
+          <td>Branch</td>
+          <td>:</td>
+          <td><%= student.student.branch %></td>
+        </tr>
+        <tr>
+          <td>Resume</td>
+          <td>:</td>
+          <td><a href="<%= student.student.resume %>" target="_blank"><button type="button" class="button" style="padding: 5px;">View Your Resume</button></a></td>
+        </tr>
+      </table>
+      <% if(student.student.isPlaced == true) { %>
+        <br>
+        <h3>Placement Data</h3>
+        <table class="table">
+          <tr>
+            <td>Company</td>
+            <td>:</td>
+            <td><%= student.job.companyName %></td>
+          </tr>
+          <tr>
+            <td>Role</td>
+            <td>:</td>
+            <td><%= student.job.jobName %></td>
+          </tr>
+          <tr>
+            <td>CTC</td>
+            <td>:</td>
+            <td><%= student.job.ctc %> LPA</td>
+          </tr>
+          <tr>
+            <td>Postinng Location</td>
+            <td>:</td>
+            <td><%= student.job.postingLocation %></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td>:</td>
+            <td><%= student.job.description %></td>
+          </tr>
+        </table>
+      <% } %>
+    </div>
+  </div>
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

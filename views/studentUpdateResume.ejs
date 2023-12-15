@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Update Resume</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+        integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/edit_profile.css">
+
+</head>
+
+<body>
+
+    <!-- <div id="navbar">
+
+      <nav>
+        <span>frnk</span>
+        <span>frnk</span>
+        <span>frnk</span>
+        <span>frnk</span>
+      </nav>
+    </div> -->
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div class="img bg-wrap text-center py-4">
+                <div class="user-logo">
+                    <div class="img" style="background-image: url(/images/logo.jpg);"></div>
+                    <h3>
+                        <%= student.firstName %>
+                            <%= student.lastName %>
+                    </h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    <a href="/profile"><span class="fa fa-user mr-3"></span> Profile</a>
+                </li>
+                <% if(student.isRejected==false) {%>
+                    <li>
+                        <a href="/updatePassword"><span class="fa fa-cloud-upload mr-3 "></span> Update Password</a>
+                    </li>
+                    <li class="active">
+                        <a href="/updateResume"><span class="fa fa-cloud-upload mr-3"></span> Update
+                            Resume</a>
+                    </li>
+                    <% if(student.isVerified==false) {%>
+                        <li>
+                            <a href="/update"><span class="fa fa-pencil-square-o mr-3"></span>Edit Profile</a>
+                        </li>
+                        <% }%>
+                            <% if(student.isVerified==true) {%>
+                                <li>
+                                    <a href="/viewCompany"><span class="fa fa-list mr-3 "></span> Companies</a>
+                                </li>
+                                <%}%>
+                                    <%}%>
+                                        <li>
+                                            <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+                                        </li>
+            </ul>
+
+        </nav>
+
+
+        <div id="Profile" class="p-4 p-md-5 pt-5">
+
+            <div class="userimage">
+                <h2 class="mb-4"> Update Resume </h2>
+            </div>
+            <form action="/updateStudent" method="POST">
+
+                <table class="table table-hover">
+                    <tr>
+                        <td> Enter Resume Link </td>
+                        <td>:</td>
+                        <td> <input required type="url" name="resume" id="resume" value="<%= student.resume %>"
+                                placeholder="Resume Link" style="width: 600px"> </td>
+                    </tr>
+                </table>
+
+                <!-- <input type="submit" name="Save"> -->
+                <button class="submit" type="submit">Save Resume</button>
+            </form>
+
+        </div>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

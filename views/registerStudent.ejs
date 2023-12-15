@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Student Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/registerStudent.css">
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+      </div>
+      <div class="img bg-wrap text-center py-4">
+        <div class="user-logo">
+          <div class="img" style="background-image: url(images/logo.jpg);"></div>
+          <h3>Welcome To Placement Cell</h3>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li>
+          <a href="/"><span class="fa fa-home mr-3"></span> Home</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <div class="box">
+
+        <form onsubmit="return checkForm();" action="/registerStudent" method="POST">
+
+          <div class="title1">
+            <a> Student Registration </a>
+          </div>
+
+          <label for="email" class="label-1"> Email </label>
+          <div class="form-group">
+            <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="email" name="email" id="email" autocomplete="off" required>
+          </div>
+
+          <label for="firstName" class="label-1">First Name </label>
+          <div class="form-group">
+            <input type="text" name="firstName" id="firstName" autocomplete="off" required>
+          </div>
+
+          <label for="middleName" class="label-1"> Middle Name </label>
+          <div class="form-group">
+            <input type="text" name="middleName" id="middleName" autocomplete="off" required>
+          </div>
+
+          <label for="lastName" class="label-1"> Last Name </label>
+          <div class="form-group">
+            <input type="text" name="lastName" id="lastName" autocomplete="off" required>
+          </div>
+
+          <label for="dob" class="label-1"> Date Of Birth </label>
+          <div class="form-group">
+            <input type="date" name="dob" id="dob" class="dob" autocomplete="off" max="<?=date('Y-m-d',strtotime('now'));?>" required>
+          </div>
+
+          <div class="form-group gender">
+            <label for="gender" class="label-1"> Gender </label>
+            <input id="gender1" type="radio" name="gender" value="Male" required> <span>Male</span>
+            <input id="gender2" type="radio" name="gender" value="Female" required><span>Female</span>
+            <input id="gender3" type="radio" name="gender" value="Other" required> <span>Other</span>
+          </div>
+
+          <label for="mobileNumber" class="label-1"> Mobile Number </label>
+          <div class="form-group">
+            <input type="tel" name="mobileNumber" id="mobileNumber" pattern="[1-9]{1}[0-9]{4}-[0-9]{5}" autocomplete="off" placeholder="99999-99999" required>
+          </div>
+
+          <label for="alternateMobileNumber" class="label-1"> Alternate Mobile Number </label>
+          <div class="form-group">
+            <input type="tel" name="alternateMobileNumber" id="alternateMobileNumber" pattern="[1-9]{1}[0-9]{4}-[0-9]{5}" autocomplete="off" placeholder="99999-99999" required>
+          </div>
+
+          <label for="tenthPercentage" class="label-1"> 10th Percentage (%) </label>
+          <div class="form-group">
+            <input type="number" min="0" max="100" step="0.01" name="tenthPercentage" id="tenthPercentage" autocomplete="off" required>
+          </div>
+
+          <label for="twelfthPercentage" class="label-1"> 12th Percentage (%) </label>
+          <div class="form-group">
+            <input type="number" min="0" max="100" step="0.01" name="twelfthPercentage" id="twelfthPercentage" autocomplete="off" required>
+          </div>
+
+          <label for="cpi" class="label-1"> CPI </label>
+          <div class="form-group">
+            <input type="number" name="cpi" min="0" max="10" step="0.01" id="cpi" autocomplete="off" required>
+          </div>
+
+          <label for="activeBacklog" class="label-1"> Active Backlog </label>
+          <div class="form-group">
+            <input type="number" min="0" name="activeBacklog" id="activeBacklog" autocomplete="off" required>
+          </div>
+
+          <label for="totalBacklog" class="label-1"> Total Backlog </label>
+          <div class="form-group">
+            <input type="number" min="0" name="totalBacklog" id="totalBacklog" autocomplete="off" required>
+          </div>
+
+          <div class="form-group gender">
+            <label for="branch" class="label-1"> Branch </label>
+            <br>
+            <input type="radio" name="branch" value="B.Tech" required> <span>B.Tech</span>
+            <input type="radio" name="branch" value="M.Tech" required> <span>M.Tech</span>
+            <input type="radio" name="branch" value="MSc" required> <span>MSc</span>
+          </div>
+          <br>
+          <label for="resume" class="label-1"> Resume Link </label>
+          <div class="form-group">
+            <input type="url" name="resume" id="browser" autocomplete="off" required>
+          </div>
+
+          <label for="password" class="label-1"> Password </label>
+          <div class="form-group">
+            <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" type="password" name="password" id="pass1" autocomplete="off" onkeyup="return validate()" required>
+          </div>
+
+          <div class="form-group2" class="label-1">
+            <ul>
+              <li id="length">
+                Your password contain atleast 8 characters.
+              </li>
+              <li id="number">
+                Your password contain atleast one number.
+              </li>
+              <li id="upper">
+                Your password contain atleast one uppercase.
+              </li>
+              <li id="lower">
+                Your password contain atleast one lowercsae.
+              </li>
+              <li id="special">
+                Your password contain atleast one special characters (@$!%*?&).
+              </li>
+            </ul>
+
+          </div>
+          <label for="confirmPassword" class="label-1"> Confirm Password </label>
+          <div class="form-group">
+            <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" type="password" name="confirmPassword" id="pass2" autocomplete="off" oninput="return confirm()" required>
+          </div>
+          <p id="incorrectMsg">Password do not match!</p>
+          <div class="btns">
+            <button type="submit" class="strong">Register</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script> 
+    function validate() {
+      var pass = document.getElementById('pass1');
+      var upper = document.getElementById('upper');
+      var lower = document.getElementById('lower');
+      var num = document.getElementById('number');
+      var len = document.getElementById('length');
+      var special = document.getElementById('special');
+
+      if (pass.value.match(/[0-9]/)) {
+        num.style.color = 'green'
+      }
+      else {
+        num.style.color = 'red'
+      }
+
+      if (pass.value.match(/[0-9]/)) {
+        num.style.color = 'green'
+      }
+      else {
+        num.style.color = 'red'
+      }
+      if (pass.value.match(/[A-Z]/)) {
+        upper.style.color = 'green'
+      }
+      else {
+        upper.style.color = 'red'
+      }
+      if (pass.value.match(/[a-z]/)) {
+        lower.style.color = 'green'
+      }
+      else {
+        lower.style.color = 'red'
+      }
+      if (pass.value.match(/[!\@\#\$\%\^\&\*]/)) {
+        special.style.color = 'green'
+      }
+      else {
+        special.style.color = 'red'
+      }
+
+      if (pass.value.length < 8) {
+        len.style.color = 'red'
+      }
+      else {
+        len.style.color = 'green'
+      }
+
+    }
+
+    function confirm() {
+
+      var pass1 = document.getElementById('pass1');
+      var pass2 = document.getElementById('pass2');
+
+      // document.getElementById('number').style.display = 'none';
+      // document.getElementById('length').style.display = 'none';
+      // document.getElementById('upper').style.display = 'none';
+      // document.getElementById('lower').style.display = 'none';
+      // document.getElementById('special').style.display = 'none';
+
+
+      if (pass1.value == pass2.value) {
+
+        document.getElementById('incorrectMsg').style.display = 'none'
+        return true;
+      }
+      else {
+        document.getElementById('incorrectMsg').style.display = 'block'
+        return false;
+      }
+
+    }
+
+    function checkForm()
+    {
+      var active=document.getElementById("activeBacklog").value;
+      var total=document.getElementById("totalBacklog").value;
+
+      if(active <= total)
+      {
+        return true;
+      }
+      else{
+        alert("Active backlog cannot be greater than total backlog.");
+        return false;
+      }
+    }
+
+  </script>
+</body>
+
+</html>

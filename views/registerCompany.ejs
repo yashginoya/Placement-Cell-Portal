@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Company Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/register_company.css">
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+      </div>
+      <div class="img bg-wrap text-center py-4">
+        <div class="user-logo">
+          <div class="img" style="background-image: url(images/logo.jpg);"></div>
+          <h3>Welcome To Placement Cell</h3>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li>
+          <a href="/"><span class="fa fa-home mr-3"></span>Home</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+     
+      <div class="box">
+
+        <form action="#add_company_submit" method="POST">
+
+          <div class="title1">
+            <a> Company Registration </a>
+
+          </div>
+
+          <label for="hrName" class="label-1"> Your Name </label>
+
+          <div class="form-group">
+            <input type="text" name="hrName" id="browser" autocomplete="off" required>
+
+
+          </div>
+
+          <label for="companyName" class="label-1"> Company Name </label>
+
+          <div class="form-group">
+            
+            <input type="text" name="companyName" id="browser" autocomplete="off" required>
+
+          </div>
+
+          <label for="email" class="label-1"> Email</label>
+
+          <div class="form-group">
+            <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="email" name="email" id="browser" autocomplete="off" required>
+
+          </div>
+
+
+          <label for="website" class="label-1"> Website </label>
+
+          <div class="form-group">
+            <input type="url" name="website" id="browser" autocomplete="off" required>
+
+
+          </div>
+
+
+          <label for="contactNumber" class="label-1"> Contact No. </label>
+
+          <div class="form-group">
+
+            <input type="tel" name="contactNumber" id="browser"  pattern="[1-9]{1}[0-9]{4}-[0-9]{5}" autocomplete="off" placeholder="99999-99999" required>
+
+
+          </div>
+
+
+          <label for="password" class="label-1"> Password </label>
+
+          <div class="form-group">
+            <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" type="password" name="password" id="pass1" autocomplete="off" onkeyup="return validate()" required>
+
+          </div>
+
+          <div class="form-group2" class="label-1">
+            <ul>
+              <li id="length">
+                Your password contain atleast 8 characters.
+              </li>
+              <li id="number">
+                Your password contain atleast one number.
+              </li>
+              <li id="upper">
+                Your password contain atleast one uppercase.
+              </li>
+              <li id="lower">
+                Your password contain atleast one lowercsae.
+              </li>
+              <li id="special">
+                Your password contain atleast one special characters (@$!%*?&).
+              </li>
+            </ul>
+          </div>
+
+          <label for="confirmPassword" class="label-1"> Password confirmation </label>
+
+          <div class="form-group">
+            <input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" type="password" name="confirmPassword" id="pass2" autocomplete="off" oninput="return confirm()" required>
+          </div>
+          <p id="incorrectMsg">Password do not match!</p>
+          <div class="btns">
+            <button type="submit" class="strong"> Add Company</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script> function validate()
+    {
+      var pass = document.getElementById('pass1');
+      var upper = document.getElementById('upper');
+      var lower = document.getElementById('lower');
+      var num =document.getElementById('number');
+      var len = document.getElementById('length');
+      var special = document.getElementById('special');
+  
+      if (pass.value.match(/[0-9]/))
+      {
+        num.style.color = 'green'
+      }
+      else{
+        num.style.color = 'red'
+      }
+
+      if (pass.value.match(/[0-9]/))
+      {
+        num.style.color = 'green'
+      }
+      else{
+        num.style.color = 'red'
+      }
+      if (pass.value.match(/[A-Z]/))
+      {
+        upper.style.color = 'green'
+      }
+      else{
+        upper.style.color = 'red'
+      }
+      if (pass.value.match(/[a-z]/))
+      {
+        lower.style.color = 'green'
+      }
+      else{
+        lower.style.color = 'red'
+      }
+      if (pass.value.match(/[!\@\#\$\%\^\&\*]/))
+      {
+        special.style.color = 'green'
+      }
+      else{
+        special.style.color = 'red'
+      }
+
+      if(pass.value.length < 8)
+      {
+        len.style.color='red'
+      }
+      else
+      {
+        len.style.color='green'
+      }
+  
+    }
+    
+    function confirm(){
+
+      var pass1=document.getElementById('pass1');
+      var pass2=document.getElementById('pass2');
+      
+      // document.getElementById('number').style.display = 'none'
+      // document.getElementById('length').style.display = 'none'
+      // document.getElementById('upper').style.display = 'none'
+      // document.getElementById('lower').style.display = 'none'
+      // document.getElementById('special').style.display = 'none'
+
+
+      if (pass1.value == pass2.value)
+      {
+
+        document.getElementById('incorrectMsg').style.display = 'none'
+      }
+      else{
+        document.getElementById('incorrectMsg').style.display = 'block'
+      }
+      
+    }
+    </script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

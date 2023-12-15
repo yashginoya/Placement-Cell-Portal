@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+            rel="stylesheet">
+
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+
+    <body>
+
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn
+                        btn-primary">
+                    </button>
+                </div>
+                <div class="img bg-wrap text-center py-4"
+                    >
+                    <div class="user-logo">
+                        <div class="img" style="background-image:
+                            url(images/logo.jpg);"></div>
+                        <h3>Welcome To Placement Cell</h3>
+                    </div>
+                </div>
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <a href="/"><span class="fa fa-home mr-3"></span>Home</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <!-- Page Content  -->
+            <div id="login-form-wrap" class="login">
+                <h2>Login</h2>
+                <form action="/profile" id="login-form" method="POST">
+                    <p>
+                        <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="email" id="email" name="email"
+                            placeholder="Enter your email" required>
+                        <i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p>
+                        <input type="password" id="password" name="password"
+                            placeholder='Enter your password' required>
+                        <i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p>
+                        <label for="role">Choose a role</label>
+                        <select name="role" id="role">
+                            <option value="Student">Student</option>
+                            <option value="Company">Company </option>
+                            <option value="Admin">Admin</option>
+                            <!-- <option value="Placement Manager">Placement Manager</option> -->
+                        </select>
+                    </p>
+                    <p>
+                        <input type="submit" id="login" value="Login">
+                    </p>
+                </form>
+                <hr>
+                <h2>Register</h2>
+                <br>
+                <div>
+                    <a style="color: white;" href="/registerStudent" class="myclass"> Student </a>
+                    <a style="color: white;" href="/registerCompany" class="myclass"> Company </a>
+                </div>
+                <br>
+                <hr>
+                <!-- <form id="login-form" method="">
+                    <p>
+                        <label for="role">Choose a role</label>
+                        <select name="role" id="role">
+                            <option value="select" selected>Student</option>
+                            <option value="select">Company </option>
+                            <option value="select">Admin</option>
+                            <option value="select">Placement Manager</option>
+                        </select>
+                    </p>
+                    <p>
+                        <input type="submit" id="login" value="Register">
+                    </p>
+                </form> -->
+            </div>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/popper.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+
+</html>

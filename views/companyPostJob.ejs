@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Post Job</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no">
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/companyPostJob.css">
+  </head>
+
+  <body>
+
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="custom-menu">
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          </button>
+        </div>
+        <div class="img bg-wrap text-center py-4">
+          <div class="user-logo">
+            <div class="img" style="background-image:
+              url(/images/company.png);"></div>
+            <h3><%= name %></h3>
+            </div>
+          </div>
+          <ul class="list-unstyled components mb-5">
+            <li>
+              <a href="/profile"><span class="fa-solid fa-user mr-3"></span>
+                Profile</a>
+            </li>
+            <li class="active">
+              <a href="/postJob"><span class="fa-solid fa-plus mr-3"></span> Add
+                Job</a>
+            </li>
+            <li>
+              <a href="/updatePassword"><span class="fa fa-cloud-upload mr-3 "></span>
+                Update
+                Password</a>
+            </li>
+            <li>
+              <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Sign
+                Out</a>
+            </li>
+          </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+          <div class="box">
+
+
+            <form action="/saveJob" method="POST">
+
+              <div class="title1">
+
+                <a> Add Job : </a>
+
+              </div>
+              <% if(message) { %>
+                <h3 style="color: red"> <%= message %> </h3>
+                  <% } %>
+                    <label for="offertype" class="label-1"> Job Name</label>
+                    <div class="form-group">
+                      <input type="text" name="jobName" id="browser"
+                        autocomplete="off" required>
+
+                    </div>
+
+                    <label for="role" class="label-1"> Posting Location</label>
+                    <div class="form-group">
+                      <input type="text" name="postingLocation" id="browser"
+                        autocomplete="off" required>
+
+                    </div>
+
+                    <label for="location" class="label-1">Open For</label>
+
+                    <div class="form-group">
+                      <input type="checkbox" name="btech" id="btech"
+                        value="B.Tech">
+                      <label for="btech"> B.Tech</label><br>
+                      <input type="checkbox" name="mtech" id="mtech"
+                        value="M.Tech">
+                      <label for="mtech"> M.Tech</label><br>
+                      <input type="checkbox" name="msc" id="msc" value="MSc">
+                      <label for="msc"> MSc </label><br>
+                    </div>
+
+
+                    <label for="description" class="label-1"> Minimum required
+                      CPI </label>
+
+                    <div class="form-group">
+                      <input type="number" min="0" max="10" step="0.01"
+                        name="cpiCriteria" id="browser" autocomplete="off"
+                        required>
+
+
+                    </div>
+
+                    <label for="cpi" class="label-1"> CTC (LPA) </label>
+
+                    <div class="form-group">
+                      <input min="0" step="0.01" type="number" name="ctc"
+                        id="browser" autocomplete="off" required>
+
+
+                    </div>
+
+                    <label for="ctc" class="label-1"> Description </label>
+
+                    <div class="form-group">
+                      <input type="text" name="description" id="browser"
+                        autocomplete="off" required>
+
+
+                    </div>
+                    <div class="btns">
+                      <button type="submit" class="strong"> Add Job</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <script src="/js/jquery.min.js"></script>
+              <script src="/js/popper.js"></script>
+              <script src="/js/main.js"></script>
+              <script src="/js/bootstrap.min.js"></script>
+            </body>
+
+          </html>

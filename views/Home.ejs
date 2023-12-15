@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Website</title>
+    <link rel="stylesheet" href="/css/homescreen.css">
+</head>
+<body>
+    <header>
+    <a href="/"><h2 class="home">Placement Cell</h2></a>
+    <nav>
+        <ul class = "nav_links">
+            <% if(flag) {%>
+            <li class="tag"><a href="/profile">Your Profile</a></li>
+            <li class="tag"><a href="/logout">Logout</a></li>
+            <% } else { %>
+                <li class="tag"><a href="/loginPage">Login</a></li>
+                <li class="tag"><a href="/registerStudent">Student Register</a></li>
+                <li class="tag"><a href="/registerCompany">Company Register</a></li>
+                <li class="tag"><a href="/aboutus">About Us</a></li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
+<h2 class="Welcome">Welcome to Placements Cell!</h2>
+
+<section id="placementstats">
+    <h2 class="kn">Placement Statistics </h2>
+    <section id = service><img src="/images/placement_stats.png" alt="Placement statistics image"></section>
+</section>
+<h2 class="kn">Know More...</h2>
+<div class="container">
+    <div class="card">
+        <div class="inner">
+            <div class="front">
+                <p class="h">Director's Message</p>
+            </div>
+            <div class="back">
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam neque optio vitae perferendis beatae, amet dolores nesciunt est itaque quasi quaerat vero sunt hic recusandae quas nam ut nisi temporibus. Similique doloribus esse, consequatur nihil saepe id voluptate nobis nemo dicta, totam dolor aliquid, eaque nulla quaerat repellendus eos fugit?</p><br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod perspiciatis aliquid. Dolores, minus facere? Rem error aut nemo officia recusandae obcaecati eveniet fuga, impedit a non illo commodi animi porro. Totam fugit ratione illum illo quidem reiciendis ullam explicabo incidunt optio similique necessitatibus veritatis vel mollitia beatae, amet rem labore debitis a nulla autem exercitationem quasi? Architecto, esse voluptates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="inner">
+                    <div class="front front1">
+                        <p class="h">Student's Achievements</p>
+                    </div>
+                    <div class="back back1">
+                        <div class="text1">
+                            <ul class="std">
+                                <li>Google Summer of Code:2018: 6 students, 2017: 4 students, 2016: 11 students.
+                                </li>
+                                <li>Yash Kumar (B.Tech 4th Year) secured 1st rank at TCS Codevita - VI finals, held at Banglore.
+                                    39 participants were shortlisted (out of which 3 were from DAIICT), 
+                                    from all over the world, for the final round, out of almost 100000 participants 
+                                    who participated in the online round.</li>
+                                    <li>
+                                        Team FruitSalad of our college has qualified for ACM-ICPC World Finals. This is the first time in the
+                                        history of our college that a team has achieved this feat. They stood 1st in Kharagpur Regionals and
+                                  2nd in Kolkata Regionals and would be representing India alongside 6 other top teams at the World Finals 
+                                  to be held in United States in May 2017.Team FruitSalad: Sumeet Varma (B.Tech. 4th Year), 
+                                  Kuldeep Patel (B.Tech. 4th Year), Yash Kumar (B.Tech. 3rd Year)
+                            </li>
+                            <li>Ms Malvika Singh, a B.Tech 2014 batch student, has been selected for PennApps XV,
+                                 a application development competition to be held at Penn Engineering, University of 
+                                 Pennsylvania during January 20 to 22nd 2017
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <h2 class="kn pr">Past Recruiters</h2>
+    <div class="img"></div>
+    <div class="contact">
+        <h2>Contact Details : </h2>
+        <br>
+        E-Mail : <li>placement@institute.ac.in</li>
+                <li>placement_manager@institute.ac.in</li>
+        <br>
+        Phone:
+        <li>(O)+91 (00) 00000000</li>
+        <li>(M) +0 00000 00000</li>
+    </div>
+    <footer>
+        &copy; 2023 Placement Website. All Rights Reserved.
+    </footer>
+</body>
+</html>

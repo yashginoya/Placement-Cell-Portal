@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Schedule Jobs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/adminInterview.css">
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+      </div>
+      <div class="img bg-wrap text-center py-4" >
+        <div class="user-logo">
+          <div class="img" style="background-image: url(/images/admin.png);"></div>
+          <% if(isSuperAdmin) {%>
+            <h3>Placement Manager</h3>
+        <% } else {%>
+            <h3>Admin</h3>
+        <% }%>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li>
+          <a href="/profile"><i class="fa fa-line-chart mr-3" aria-hidden="true"></i> Admin Statistics</a>
+        </li>
+        <li>
+          <a href="/updatePassword"><i class="fa fa-cloud-upload mr-3 " aria-hidden="true"></i> Update Password</a>
+        </li>
+        <li>
+          <a href="/unverifiedstudents"><span class="fa fa-check mr-3 notif"></span> Verify Students</a>
+        </li>
+        <li class="active">
+          <a href="/adminInterviewSchedule"><span class="fa fa-edit mr-3"></span> Schedule Jobs </a>
+        </li>
+        <li>
+          <a href="/unverifiedjobs"><span class="fa fa-briefcase mr-3"></span> Verify Jobs</a>
+        </li>
+        <% if(isSuperAdmin) {%>
+          <li>
+            <a href="/unverifiedcompany"><span class="fa fa-building mr-3"></span> Verify Company</a>
+          </li>
+        <% }%>
+        <li>
+          <a href="/adminStudents"><span class="fa-solid fa-list mr-3"></span> Student list</a>
+        </li>
+        <li>
+          <a href="/adminJobs"><span class="fa-solid fa-list mr-3"></span> Job list</a>
+        </li>
+          <li>
+            <a href="/adminCompany"><span class="fa-solid fa-list mr-3"></span> Company list</a>
+          </li>
+        <li>
+            <a href="/datasheet"><span class="fa fa-download mr-3"></span> Datasheet</a>
+          </li>
+        <li>
+          <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <h2 class="mb-4">Schedule Jobs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Job</th>
+            <th>Start Dates</th>
+            <th>End Dates</th>
+            <th>Confirm</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <%  for(let i=0;i<record.length;i++) {%>
+               
+                <tr>
+                
+                  <td> <%= record[i].companyName%> </td>
+                  <td> <%= record[i].jobName %> </td>
+
+                  <form action="/adminUpdateInterviewSchedule/<%= record[i]._id%>" method="POST">
+                    <td>
+                      <label for="datepicker"></label>
+                      <input required type="date" id="datepicker" name="startDate" min="2023-04-11" max="2024-04-11" value="<%= new Date(record[i].startDate).toISOString().substring(0, 10) %>">
+        
+                    </td>
+                    <td>
+                      <input required type="date" id="datepicker" name="endDate" min="2023-04-11" max="2024-04-11" value="<%= new Date(record[i].endDate).toISOString().substring(0, 10) %>">
+        
+                    </td>
+                    <td> <button type="Submit"> Notify Students</button></td>
+                  </form>
+                </tr>
+              <%   } %>
+
+        
+ 
+          <!-- add more rows here as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
